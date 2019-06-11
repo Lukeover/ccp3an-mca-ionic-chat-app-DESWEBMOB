@@ -1,14 +1,36 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Ionic Blank
+      Chat app <ion-icon name="beer"></ion-icon>
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+  <ion-list>
+    <ion-item>
+      <ion-label fixed>Digite o seu nome: </ion-label>
+      <ion-input type="text" [(ngModel)]="nomeUser" aria-required></ion-input>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label>Sala</ion-label>
+      <ion-select [(ngModel)]="sala" okText="Selecionar" cancelText="Cancelar">
+        <ion-select-option *ngFor="let sala of salaService.salas" [value]="sala" selected>{{sala.nome}}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Icone</ion-label>
+      <ion-select [(ngModel)]="icon" okText="Selecionar" cancelText="Cancelar">
+        <ion-item *ngFor="let icon of icons">
+            <ion-icon name="{{icon}}"></ion-icon>
+            <ion-select-option [value]="icon"><ion-label>{{icon}}</ion-label></ion-select-option>
+        </ion-item>
+        
+      </ion-select>
+    </ion-item>
+  </ion-list>
+  <ion-button expand="block" (click)="onItemClick()">Entrar na sala</ion-button>
 </ion-content>

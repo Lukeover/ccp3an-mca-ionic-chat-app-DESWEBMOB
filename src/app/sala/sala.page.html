@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{sala.nome}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let message of sala.message"> 
+    <ion-card-header>
+      <ion-card-subtitle>{{message.user}}</ion-card-subtitle>
+      <ion-text >
+        {{message.text}}
+      </ion-text>
+    </ion-card-header>
+  </ion-card>
+</ion-content>
+<ion-footer no-shadow>
+  <ion-item>
+    <ion-textarea [(ngModel)]="texto" placeholder="Enter more information here..."></ion-textarea>
+  </ion-item>
+  <ion-toolbar position="bottom">
+    <ion-button (click)="enviarMensagem()" expand="block">Enviar</ion-button>
+  </ion-toolbar>
+</ion-footer>
