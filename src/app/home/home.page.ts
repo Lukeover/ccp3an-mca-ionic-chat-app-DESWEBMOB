@@ -4,6 +4,7 @@ import { DataService } from '../services/data.service';
 import { SalasService } from '../salas.service';
 import { AlertController } from '@ionic/angular';
 
+
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
