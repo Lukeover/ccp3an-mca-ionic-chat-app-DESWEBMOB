@@ -13,6 +13,7 @@ export class SalaPage implements OnInit {
   target: any;
   salas: any;
   nomeUser: string;
+  icone: any
   texto: any;
   //sala selecionada
   id: any;
