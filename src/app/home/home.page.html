@@ -21,16 +21,20 @@
         </ion-select-option>
       </ion-select>
     </ion-item>
-    <ion-item>
-      <ion-label>Icone</ion-label>
-      <ion-select [(ngModel)]="icon" okText="Selecionar" cancelText="Cancelar">
+    <ion-list>
+      <ion-radio-group>
+        <ion-list-header>
+          <ion-label>Icons</ion-label>
+        </ion-list-header>
         <ion-item *ngFor="let icon of icons">
-            <ion-icon name="{{icon}}"></ion-icon>
-            <ion-select-option [value]="icon"><ion-label>{{icon}}</ion-label></ion-select-option>
+          <ion-item>
+            <ion-label>{{icon}} <ion-icon name="{{icon}}"></ion-icon>
+            </ion-label>
+            <ion-radio [(ngModel)]="icon" slot="start" [value]="icon"></ion-radio>
+          </ion-item>
         </ion-item>
-        
-      </ion-select>
-    </ion-item>
+      </ion-radio-group>
+    </ion-list>
   </ion-list>
   <ion-button expand="block" (click)="onItemClick()">Entrar na sala</ion-button>
 </ion-content>

@@ -30,16 +30,16 @@ public alertController: AlertController;
     icons= [
         'logo-apple',
         'md-aperture',
-        'ios-basketball-outline',
-        'ios-beer-outline',
-        'ios-flask-outline',
+        'basketball',
+        'beer-outline',
+        'flask',
         'md-flame',
-        'ios-flash-outline',
-        'ios-finger-print-outline',
-        'ios-game-controller-a',
-        'ios-hammer-outline',
-        'ios-ice-cream-outline',
-        'ios-images'
+        'flash',
+        'finger-print',
+        'game-controller-a',
+        'hammer',
+        'ice-cream',
+        'images'
     ];
        
 

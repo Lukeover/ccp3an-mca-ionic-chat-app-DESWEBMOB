@@ -30,7 +30,8 @@ export class HomePage {
       let navigationExtras: NavigationExtras = {
         state: {
           sala: this.sala,
-          nomeUser: this.nomeUser
+          nomeUser: this.nomeUser,
+          icone: this.icon
 
         }
       };
