@@ -17,7 +17,7 @@
     <ion-item>
       <ion-label>Sala</ion-label>
       <ion-select [(ngModel)]="sala" okText="Selecionar" cancelText="Cancelar">
-        <ion-select-option *ngFor="let sala of salaService.salas" [value]="sala" selected>{{sala.nome}}
+        <ion-select-option *ngFor="let sala of salas  | async" [value]="sala" selected>{{sala.nome}}
         </ion-select-option>
       </ion-select>
     </ion-item>

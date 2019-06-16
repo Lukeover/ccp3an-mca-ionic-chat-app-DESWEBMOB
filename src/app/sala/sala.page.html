@@ -7,6 +7,7 @@
 <ion-content>
   <ion-card *ngFor="let message of sala.message"> 
     <ion-card-header>
+        <ion-datetime type="text" displayFormat="DD/MM/YYYY">{{message.data}}</ion-datetime>
       <ion-card-subtitle>{{message.user}}<ion-icon name="{{message.icone}}"></ion-icon></ion-card-subtitle>
       <ion-text >
         {{message.text}}

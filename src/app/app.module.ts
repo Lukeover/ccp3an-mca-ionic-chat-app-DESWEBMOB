@@ -9,6 +9,9 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
+import { AngularFireModule } from 'angularfire2'
+import { AngularFireDatabaseModule } from 'angularfire2/database'
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -20,4 +23,13 @@ import { AppRoutingModule } from './app-routing.module';
   ],
   bootstrap: [AppComponent]
 })
+// Por questões de segurança as credenciais de acesso ao fire base foram omitidas
+export const firebaseConfig = {};
+
+imports: [
+  BrowserModule,
+  IonicModule.forRoot(app01),
+  AngularFireModule.initializeApp(firebaseConfig),
+  AngularFireDatabaseModule]
+
 export class AppModule {}

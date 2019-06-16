@@ -3,7 +3,7 @@ import { Router, NavigationExtras } from '@angular/router';
 import { DataService } from '../services/data.service';
 import { SalasService } from '../salas.service';
 import { AlertController } from '@ionic/angular';
-
+import {AngularFireDatabase} from 'angularfire2/database';
 
 @Component({
   selector: 'app-home',
@@ -18,12 +18,18 @@ export class HomePage {
   salaService: SalasService;
   icon: any;
   icons: any;
+  salas: any;
   constructor(private router: Router, private dataService: DataService, private salaServices: SalasService,
-     public alertController: AlertController) {
+     public alertController: AlertController, db:AngularFireDatabase) {
+     // console.log(db);
+     
     this.salaService = salaServices;
     this.icons = this.salaService.icons;
   }
-
+  ngOnInit (){
+    this.salas = this.salaService.fetchSalas();
+   }
+   
   //Adicionando nome ao cache
   enviaParaSala(pagina: any) {
     if (this.salaService.userDisponivel(this.sala.id, this.nomeUser)) {

@@ -2,9 +2,14 @@ import { Injectable } from '@angular/core';
 import { identifierModuleUrl } from '@angular/compiler';
 import { AlertController } from '@ionic/angular';
 import { Router } from '@angular/router';
+import {AngularFireDatabase} from 'angularfire2/database'
+
+
 
 @Injectable()
 export class SalasService {
+    constructor (private db: AngularFireDatabase){
+    }
 public router: Router;
 public alertController: AlertController;
 
@@ -23,8 +28,15 @@ public alertController: AlertController;
             this.router.navigate(['/home']);
         }
     }
+    fetchSalas (){
+        return this.db.list("/salas/");
+       }
+    fetchMessages (){
+        return this.db.list("/salas/message");
+       }
     novaMensagem (id,message){
-        this.salas[id].message.push(message);
+        //this.salas[id].message.push(message);
+        this.db.list("/salas/").push(message);
        }
     
     icons= [
@@ -56,7 +68,8 @@ public alertController: AlertController;
                 {
                     user: '0',
                     icone: 'beer',
-                    text: 'texto'
+                    text: 'texto',
+                    data: 15052019
                 },
                 {
                     user: '1',
