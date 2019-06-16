@@ -30,6 +30,7 @@ export class SalaPage implements OnInit {
       if (this.router.getCurrentNavigation().extras.state) {
         this.nomeUser = this.router.getCurrentNavigation().extras.state.nomeUser;
         this.id = this.router.getCurrentNavigation().extras.state.sala.id;
+        this.icone = this.router.getCurrentNavigation().extras.state.icone;
         //carrega a sala do service 
         this.sala = salasService.salas[this.id];
         console.log(salasService.salas[this.id].user);
@@ -52,12 +53,13 @@ export class SalaPage implements OnInit {
     }
   }
   enviarMensagem(){
-    this.novaMensagem(this.sala,this.texto);
+    this.novaMensagem(this.sala,this.texto,this.icone);
   }
-  novaMensagem (sala,message){
+  novaMensagem (sala,message,icone){
     message = {
       user: this.nomeUser,
-      text: this.texto
+      text: this.texto,
+      icone: this.icone
 
     }
     sala.message.push(message);

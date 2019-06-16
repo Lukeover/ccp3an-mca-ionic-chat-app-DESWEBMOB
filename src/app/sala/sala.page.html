@@ -7,7 +7,7 @@
 <ion-content>
   <ion-card *ngFor="let message of sala.message"> 
     <ion-card-header>
-      <ion-card-subtitle>{{message.user}}</ion-card-subtitle>
+      <ion-card-subtitle>{{message.user}}<ion-icon name="{{message.icone}}"></ion-icon></ion-card-subtitle>
       <ion-text >
         {{message.text}}
       </ion-text>

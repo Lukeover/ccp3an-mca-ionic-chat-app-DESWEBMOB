@@ -31,12 +31,12 @@ public alertController: AlertController;
         'logo-apple',
         'md-aperture',
         'basketball',
-        'beer-outline',
+        'beer',
         'flask',
         'md-flame',
         'flash',
         'finger-print',
-        'game-controller-a',
+        'game-controller',
         'hammer',
         'ice-cream',
         'images'
@@ -55,6 +55,7 @@ public alertController: AlertController;
             message: [
                 {
                     user: '0',
+                    icone: 'beer',
                     text: 'texto'
                 },
                 {

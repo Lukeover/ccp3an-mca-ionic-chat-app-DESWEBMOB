@@ -17,14 +17,17 @@
     <ion-item>
       <ion-label>Sala</ion-label>
       <ion-select [(ngModel)]="sala" okText="Selecionar" cancelText="Cancelar">
-        <ion-select-option *ngFor="let sala of salaService.salas | async" [value]="sala" selected>{{sala.nome}}
+        <ion-select-option *ngFor="let sala of salaService.salas" [value]="sala" selected>{{sala.nome}}
         </ion-select-option>
       </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-button expand="block" (click)="onItemClick()">Entrar na sala</ion-button>
     </ion-item>
     <ion-list>
       <ion-radio-group>
         <ion-list-header>
-          <ion-label>Icons</ion-label>
+          <ion-label>Selecione seu icone</ion-label>
         </ion-list-header>
         <ion-item *ngFor="let icon of icons">
           <ion-item>
@@ -36,5 +39,4 @@
       </ion-radio-group>
     </ion-list>
   </ion-list>
-  <ion-button expand="block" (click)="onItemClick()">Entrar na sala</ion-button>
 </ion-content>
