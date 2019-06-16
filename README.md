@@ -1,2 +1,3 @@
 # ccp3an-mca-ionic-chat-app-DESWEBMOB
-Entregas de ionic DesWebMob -- Entregas no Branch appChat
+App feito em ionic 4 --
+Entregas de ionic DesWebMob -- Entregas anteriores no Branch appChat
